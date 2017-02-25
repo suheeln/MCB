@@ -1,3 +1,0 @@
-#*/base/*
-#*/base/UpdateEmailAddressIT.java 
-*/base/QuickViewIT.java
