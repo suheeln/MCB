@@ -1,0 +1,144 @@
+apply plugin: 'java'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+group = 'com.tyfone.mcb'
+version = '1.0-SNAPSHOT'
+
+description = """"""
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'joda-time', name: 'joda-time', version:'2.9.4'
+    compile group: 'junit', name: 'junit', version:'4.12'
+    compile group: 'io.appium', name: 'java-client', version:'4.1.2'
+    compile group: 'pl.pragmatists', name: 'JUnitParams', version:'1.0.4'
+}
+
+sourceSets {
+    test {
+        resources {
+            srcDir "src/test/resources"
+        }
+    }
+}
+
+test { // Remove the test classes from the build test process; run them independently via tasks
+    exclude '**/customer/**'
+}
+
+clean.doFirst {
+    delete "${rootDir}/target/failsafe-reports/"
+    println "Deleted ${rootDir}/target/failsafe-reports/"
+}
+
+task "SsfcuFunctionalTests"(type: Test) {
+    /* References it.properties for parameter values */
+    outputs.upToDateWhen { false }
+    includes = ['**/base/**']
+    excludes = ['**/base/SecurityPolicyIT.class']
+    systemProperty "client", "ssfcu"
+    systemProperty "test.type", "android"
+}
+
+task "StarOneFunctionalTests"(type: Test) {
+    /* References it.properties for parameter values */
+    outputs.upToDateWhen { false }
+    includes = ['**/base/**', '**/starone/StarOneAboutUsIT.class',
+                '**/starone/StarOneBlockUnblockIT.class', '**/starone/StarOneRatesIT.class',
+                '**/starone/StarOneSaveUserIdIT.class',
+                '**/starone/StarOneUpdateMailingAddressIT.class']
+    excludes = ['**/base/SecurityPolicyIT.class']
+    systemProperty "client", "starone"
+    systemProperty "test.type", "android"
+}
+
+task "StarOneIosFunctionalTests"(type: Test) {
+    /* References it.properties for parameter values */
+    outputs.upToDateWhen { false }
+    //includes = ['**/base/AccountSummaryIT.class',
+    //            '**/base/AlertsSettingsIT.class',
+    //            '**/base/BlackoutPeriodIT.class',
+    //            '**/base/DeviceManagementIT.class',
+    //            '**/base/LoginIT.class',
+    //            '**/base/PrivacyPolicyIT.class',
+    //            '**/base/ShowHideAccountsIT.class',
+    //            '**/base/TransfersIT.class',
+    //            '**/base/UpdateEmailAddressIT.class',
+    //            '**/starone/StarOneAboutUsIT.class',
+    //            '**/starone/StarOneUpdateMailingAddressIT.class']
+
+    includes = ['**/base/**', '**/starone/StarOneAboutUsIT.class',
+                '**/starone/StarOneBlockUnblockIT.class', '**/starone/StarOneRatesIT.class',
+                '**/starone/StarOneSaveUserIdIT.class',
+                '**/starone/StarOneUpdateMailingAddressIT.class']
+    excludes = ['**/base/SecurityPolicyIT.class']
+
+    systemProperty "client", "starone"
+    systemProperty "test.type", "ios"
+}
+
+task "CovantageFunctionalTests"(type: Test) {
+    /* References it.properties for parameter values */
+    outputs.upToDateWhen { false }
+    includes = ['**/base/**', '**/covantage/**']
+    excludes = ['**/base/ContactUsIT.class', '**/base/PrivacyPolicyIT.class',
+                '**/base/SecurityPolicyIT.class', '**/base/UpdateEmailAddressIT.class',
+                '**/base/UpdatePhoneNumberIT.class']
+    systemProperty "client", "cov"
+    systemProperty "test.type", "android"
+}
+
+task "PmcuFunctionalTests"(type: Test) {
+    /* References it.properties for parameter values */
+    outputs.upToDateWhen { false }
+    includes = ['**/base/AccountSummaryIT.class', '**/base/AlertsSettingsIT.class',
+                '**/base/BlackoutPeriodIT.class', '**/base/ContactUsIT.class',
+                '**/base/DeviceManagementIT.class', '**/base/LocationsIT.class',
+                '**/base/LoginIT.class', '**/base/RememberMeIT.class', '**/base/SecurityQAIT.class',
+                '**/base/UpdatePhoneNumberIT.class', '**/pmcu/PMCUAboutUsIT.class',
+                '**/pmcu/PMCUAddMembershipIT.class', '**/pmcu/PMCUDeleteMembershipIT.class',
+                '**/pmcu/PMCURatesIT.class']
+    systemProperty "client", "pmcu"
+    systemProperty "test.type", "android"
+}
+
+task "RtnFunctionalTests"(type: Test) {
+    /* References it.properties for parameter values */
+    outputs.upToDateWhen { false }
+    includes = ['**/base/AccountSummaryIT.class', '**/base/AlertsSettingsIT.class',
+                '**/base/BlackoutPeriodIT.class', '**/base/DeviceManagementIT.class',
+                '**/base/LoginIT.class', '**/base/RememberMeIT.class', '**/base/SecurityQAIT.class']
+    systemProperty "client", "rtn"
+    systemProperty "test.type", "android"
+}
+
+task "BBBFunctionalTests"(type: Test) {
+    /* References bbb-it.properties for parameter values */
+    outputs.upToDateWhen { false }
+    includes = ['**/browserbasedbanking/AboutUsIT.class',
+                '**/browserbasedbanking/Add_DeleteMembershipIT.class',
+                '**/browserbasedbanking/AccountSummaryIT.class',
+                '**/browserbasedbanking/AlertsSettingsIT.class',
+                '**/browserbasedbanking/BlackoutPeriodIT.class',
+                '**/browserbasedbanking/LoginIT.class',
+                '**/browserbasedbanking/LocationsIT.class',
+                '**/browserbasedbanking/ShowHideAccountsIT.class',
+                '**/browserbasedbanking/RatesIT.class',
+                '**/browserbasedbanking/SecurityQAIT.class',
+                '**/browserbasedbanking/TransfersIT.class',
+                '**/browserbasedbanking/ContactUsIT.class']
+    systemProperty "test.type", "olb2"
+}
+
+task "OLB2FunctionalTests"(type: Test) {
+    /* References bbb-it.properties for parameter values */
+    outputs.upToDateWhen { false }
+    includes = ['**/browserbasedbanking/AccountSummaryIT.class',
+                '**/browserbasedbanking/LoginIT.class',
+                '**/browserbasedbanking/TransfersIT.class']
+    systemProperty "test.type", "olb2"
+}

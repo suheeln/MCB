@@ -1,0 +1,16 @@
+*/base/AccountSummaryIT.java
+*/base/AlertsSettingsIT.java
+*/base/BlackoutPeriodIT.java
+*/base/ContactUsIT.java
+*/base/DeviceManagementIT.java
+#*/base/ForgotUserIdIT.java
+*/base/LocationsIT.java
+*/base/LoginIT.java
+*/base/RememberMeIT.java
+*/base/SecurityQAIT.java
+#*/base/ShowHideAccountsIT.java
+*/base/UpdatePhoneNumberIT.java
+*/pmcu/PMCUAboutUsIT.java
+*/pmcu/PMCUAddMembershipIT.java
+*/pmcu/PMCUDeleteMembershipIT.java
+*/pmcu/PMCURatesIT.java

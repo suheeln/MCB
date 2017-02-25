@@ -1,0 +1,12 @@
+*/browserbasedbanking/Add_DeleteMembershipIT.java
+*/browserbasedbanking/AboutUsIT.java
+*/browserbasedbanking/AccountSummaryIT.java
+*/browserbasedbanking/AlertsSettingsIT.java
+*/browserbasedbanking/BlackoutPeriodIT.java
+*/browserbasedbanking/ContactUsIT.java
+*/browserbasedbanking/LoginIT.java
+*/browserbasedbanking/LocationsIT.java
+*/browserbasedbanking/RatesIT.java
+*/browserbasedbanking/ShowHideAccountsIT.java
+*/browserbasedbanking/SecurityQAIT.java
+*/browserbasedbanking/TransfersIT.java

@@ -1,0 +1,5 @@
+*/base/ContactUsIT.java
+*/base/PrivacyPolicyIT.java
+*/base/SecurityPolicyIT.java
+*/base/UpdateEmailAddressIT.java
+*/base/UpdatePhoneNumberIT.java

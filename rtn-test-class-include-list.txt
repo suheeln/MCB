@@ -1,0 +1,28 @@
+#*/base/AccountSummaryIT.java
+#*/base/AlertsSettingsIT.java
+#*/base/BlackoutPeriodIT.java
+#*/base/DeviceManagementIT.java
+#*/base/LoginIT.java
+#*/base/RememberMeIT.java
+#*/base/SecurityQAIT.java
+
+###I added testcases
+#*/base/LocationsIT.java 
+#*/base/BlackoutPeriodIT.java
+#*/base/ContactUsIT.java
+#*/base/RememberMeIT.java
+#*/base/DefaultSettingsIT.java
+#*/base/ShowHideAccountsIT.java
+#*/base/UpdateEmailAddressIT.java
+#*/base/UpdatePhoneNumberIT.java
+#*/base/DepositIT.java  --> Not done
+#*/base/TransfersIT.java --> Not done
+*/base/QuickViewIT.java
+#*/base/ChangePasswordIT.java
+
+#testcaes without base
+#*/rtn/RTNAboutUsIT.java
+#*/rtn/RTNRatesIT.java
+#*/rtn/RTNUpdateMailingAddressIT.java
+
+
