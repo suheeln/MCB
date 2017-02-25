@@ -1,3 +1,0 @@
-*/browserbasedbanking/LoginIT.java
-*/browserbasedbanking/AccountSummaryIT.java
-*/browserbasedbanking/TransfersIT.java
